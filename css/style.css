@@ -15,7 +15,8 @@ body {
 }
 
 .header {
-  height: 100vh;
+  /* height: 100vh; */
+  padding-bottom: 60px;
   background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
     url("../images/bg.png") no-repeat center top / cover;
 }
@@ -29,6 +30,17 @@ body {
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+.nav {
+  position: relative;
+}
+
+.m-menu {
+  display: none;
+}
+
+.is-open {
+  display: block !important;
 }
 
 .menu {
@@ -198,7 +210,7 @@ body {
   cursor: pointer;
 }
 .select-cinema {
-  min-width: 370px;
+  width: 370px;
 }
 
 /* ---------------- */
@@ -209,6 +221,10 @@ body {
   background: rgba(36, 36, 36, 0.18);
   border-radius: 10px;
   margin-bottom: 40px;
+}
+
+.scheme-svg {
+  max-width: 1170px;
 }
 
 .scheme path:not(.light) {
@@ -235,6 +251,7 @@ body {
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   max-width: 830px;
+  width: 90%;
   margin: auto;
   padding-top: 22px;
   padding-bottom: 38px;
@@ -292,4 +309,111 @@ body {
 }
 
 .button-pay {
+}
+
+@media (max-width: 960px) {
+  .container {
+    max-width: 780px;
+    /* margin: auto; */
+  }
+  .select-cinema {
+    width: 100%;
+  }
+  .session-time {
+    margin-left: 10px;
+  }
+
+  .price {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 760px;
+    padding: 0 20px;
+  }
+  .menu-item {
+    margin-right: 20px;
+  }
+  .session {
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+  }
+  .session-date {
+    flex-basis: 70%;
+    order: 0;
+  }
+  .session-cinema {
+    order: 2;
+  }
+  .session-time {
+    order: 1;
+  }
+  .session-label {
+    margin-top: 40px;
+  }
+
+  .select {
+    margin-top: 0;
+  }
+  .price {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    max-width: 760px;
+    width: 90%;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding: 20px;
+    margin-left: 20px;
+    background-color: #621402;
+    border-radius: 10px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20%);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .menu-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .m-menu {
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .film {
+    flex-direction: column;
+    align-items: center;
+  }
+  .film-desription {
+    margin-right: 30px;
+  }
+  .film-trailer {
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: 0;
+  }
 }
